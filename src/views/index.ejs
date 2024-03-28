@@ -1,0 +1,38 @@
+<div class="container mt-5">
+    <div class="row justify-content-end">
+        <div class="col-auto">
+            <!-- <button class="btn btn-primary float-right mb-3" id="addProjectBtn">Add New Project</button> -->
+            <a href="/addnewproject" class="btn btn-primary mb-3">Add New Project</a>
+        </div>
+    </div>   
+   <h1 class="mt-4 mb-4 header">Your current active projects:</h1>
+    <table class="table table-light">
+        <thead>
+            <tr>
+                <th scope="col" class="text-center">Title</th>
+                <th scope="col" class="text-center">Description</th>
+                <th scope="col" class="text-center">Author</th>
+                <th scope="col" class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% projects.forEach(project=> { %>
+                <tr>
+                    <th scope="row" class="text-center">
+                        <%= project.name %>
+                    </th>
+                    <td class="text-center">
+                        <%= project.desc %>
+                    </td>
+                    <td class="text-center"><%= project.author %>
+                    </td>
+                    <td class="text-center">
+                        <a href="/addissue/<%= project.id %>" class="btn btn-sm btn-primary">Add Issue</a>
+                        <a href="/viewissues/<%= project.id %>" class="btn btn-sm btn-primary">View Issues</a>
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+    </div>
+</div>

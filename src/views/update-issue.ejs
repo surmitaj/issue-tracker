@@ -1,0 +1,33 @@
+<!-- views/add-issue.ejs -->
+
+<h1 class="mt-5 mb-4 header">Update Issue</h1>
+
+<form action="/postupdatedissue" method="post">
+    <input type="hidden" class="form-control" id="projectId" name="projectId" value="<%= issue.projectId %>">
+    
+    <div class="mb-3">
+        <label for="title" class="form-label">Issue Title</label>
+        <input type="text" class="form-control" id="title" name="title" value="<%= issue.title %>">
+    </div>
+    <div class="mb-3">
+        <label for="desc" class="form-label">Issue Description</label>
+        <textarea class="form-control" id="desc" name="desc" rows="3"
+        required><%= issue.desc %>
+    </textarea>
+    </div>
+    <div class="mb-3">
+    <label for="label" class="form-label">Label</label>
+    <select class="form-select" id="label" name="label">
+        <option value="New" <%= issue.label === 'New' ? 'selected' : '' %>>New</option>
+        <option value="In Progress" <%= issue.label === 'In Progress' ? 'selected' : '' %>>In Progress</option>
+        <option value="Completed" <%= issue.label === 'Completed' ? 'selected' : '' %>>Completed</option>
+        <option value="Rejected" <%= issue.label === 'Rejected' ? 'selected' : '' %>>Rejected</option>
+    </select>
+    </div>
+    <div class="mb-3">
+        <label for="author" class="form-label">Author</label>
+        <input type="text" class="form-control" id="author" name="author"
+        value="<%= issue.author %>">
+    </div>
+    <button type="submit" class="btn btn-primary">Update issue</button>
+</form>

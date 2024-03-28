@@ -1,0 +1,34 @@
+    <h1 class="mt-5 mb-4 header">Your current active issues:</h1>
+    <table class="table table-light">
+        <thead>
+            <tr>
+                <th scope="col" class="text-center">Title</th>
+                <th scope="col" class="text-center">Description</th>
+                <th scope="col" class="text-center">Label</th>
+                <th scope="col" class="text-center">Author</th>
+                <th scope="col" class="text-center">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% issues.forEach(issue=> { %>
+                <tr>
+                    <th scope="row" class="text-center">
+                        <%= issue.title %>
+                    </th>
+                    <td class="text-center">
+                        <%= issue.desc %>
+                    </td>
+                    <td class="text-center"><%= issue.label %>
+                    </td>
+                    </td>
+                    <td class="text-center"><%= issue.author %>
+                    </td>
+                    <td class="text-center">
+                        <a href="/editissue/<%= issue.id %>" class="btn btn-sm btn-primary">Edit Issue</a>
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+    </div>
+</div>

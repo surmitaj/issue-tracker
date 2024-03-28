@@ -1,0 +1,19 @@
+<!-- views/add-project.ejs -->
+
+<h1 class="mt-5 mb-4 header">Add New Project</h1>
+
+<form action="/" method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="name" class="form-label">Project Name</label>
+        <input type="text" class="form-control" id="name" name="name">
+    </div>
+    <div class="mb-3">
+        <label for="desc" class="form-label">Project Description</label>
+        <textarea class="form-control" id="desc" name="desc" rows="3" required></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="author" class="form-label">Author</label>
+        <input type="text" class="form-control" id="author" name="author">
+    </div>
+    <button type="submit" class="btn btn-primary">Add Project</button>
+</form>
