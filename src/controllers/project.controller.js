@@ -14,7 +14,6 @@ class ProjectsController {
 
   postAddProject(req, res, next) {
     const { name, desc, author } = req.body;
-    console.log(name, desc, author, req.body)
     ProjectModel.add(name, desc, author);
     res.redirect('/');
   }
